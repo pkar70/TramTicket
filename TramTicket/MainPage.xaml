@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="TramTicket.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TramTicket"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid Margin="6,6,6,6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- 0 title -->
+            <RowDefinition Height="*" />    <!-- 1 spacer -->
+            <RowDefinition Height="Auto" /> <!-- 2 start time-->
+            <RowDefinition Height="Auto" /> <!-- 3 end time-->
+            <RowDefinition Height="*" />    <!-- 4 spacer -->
+            <RowDefinition Height="Auto" /> <!-- 5 buttons-->
+            <RowDefinition Height="*" />    <!-- 6 spacer -->
+            <RowDefinition Height="Auto" /> <!-- 7 slider time -->
+            <RowDefinition Height="Auto" /> <!-- 8 slider value -->
+            <RowDefinition Height="*" />    <!-- 9 spacer -->
+            <RowDefinition Height="Auto" /> <!-- 10 button refresh -->
+            <RowDefinition Height="*" />    <!-- 11 spacer -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="TramTicket" HorizontalAlignment="Center" FontSize="24" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Od dnia:" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Name="uiDataOd" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Do dnia:" />
+        <TextBlock Grid.Row="3" Grid.Column="1" Name="uiDataDo" />
+
+        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Content="20 min" Click="uiAdd20_Click" />
+        <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Content="50 min" Click="uiAdd50_Click" />
+
+        <Slider Grid.Row="7" Grid.ColumnSpan="2" Header="Czas" HorizontalAlignment="Stretch" Name="uiSliderCzas" Maximum="90"/>
+        <TextBlock Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Right" Text="{Binding ElementName=uiSliderCzas, Path=Value}" />
+
+        <Slider Grid.Row="8" Grid.ColumnSpan="2" Header="Kwota" HorizontalAlignment="Stretch" Name="uiSliderKwota" Maximum="202.9"/>
+        <TextBlock Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Right" Text="{Binding ElementName=uiSliderKwota, Path=Value}" />
+
+        <Button Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" Click="uiRefresh_Click" >
+            <SymbolIcon Symbol="Refresh" />
+        </Button> 
+
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal" >
+            <AppBarButton Icon="Setting" Click="uiSetting_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

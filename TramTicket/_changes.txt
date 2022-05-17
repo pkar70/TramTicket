@@ -1,0 +1,5 @@
+﻿2022.05.17
+* VBlibek
+* ustawianie danych (koszt biletów, karty, karta od-do) - było tylko w kodzie, jest na NowaKarta.xaml
+* przedtem Kwote ustawialo jako min(kwota, max), teraz ustawia Max jako max(kwota, max) - czyli może być wiecej niż max policzone i pokazane
+* pokazuje także liczbowo liczniki dni i kwoty

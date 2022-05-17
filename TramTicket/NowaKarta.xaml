@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="TramTicket.NowaKarta"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TramTicket"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <StackPanel>
+        <TextBlock Text="Nowa karta:" FontSize="18" FontWeight="Bold"/>
+        <CalendarDatePicker Name="uiOd" Header="Od dnia" />
+        <CalendarDatePicker Name="uiDo" Header="Do dnia" />
+
+        <TextBox Name="uiCenaKarty" Header="Cena karty" InputScope="Number" />
+
+        <TextBox Name="uiSmallTicket" Header="Cena 'krótkiego' biletu" InputScope="Number" />
+        <TextBox Name="uiNormalTicket" Header="Cena 'krótkiego' biletu" InputScope="Number" />
+
+        <Button Content="OK" HorizontalAlignment="Center" Click="uiOk_Click" />
+
+
+    </StackPanel>
+</Page>
