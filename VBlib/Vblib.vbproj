@@ -13,7 +13,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="1.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="pkar.DotNetExts" Version="1.2.2" />
+    <PackageReference Include="pkar.NetConfigs" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>

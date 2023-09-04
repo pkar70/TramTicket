@@ -1,4 +1,5 @@
 ﻿Imports vb14 = Vblib.pkarlibmodule14
+Imports pkar.Uwp.Ext
 
 Public NotInheritable Class MainPage
     Inherits Page
