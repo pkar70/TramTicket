@@ -6,9 +6,11 @@ Public NotInheritable Class NowaKarta
     Inherits Page
 
     Private Async Sub uiOk_Click(sender As Object, e As RoutedEventArgs)
+        If Not uiOd.Date.HasValue Then Return
+        If Not uiDo.Date.HasValue Then Return
 
         If uiOd.Date > uiDo.Date Then
-            vb14.DialogBox("Data ważności nie może być ważna mniejsza niż data początku")
+            vb14.DialogBox("Data ważności nie może być ważna mniejsza niż data początku obowiązywania karty")
             Return
         End If
 
@@ -17,6 +19,7 @@ Public NotInheritable Class NowaKarta
         uiCenaKarty.SetSettingsInt("uiCenaKarty", False, 100)
         uiSmallTicket.SetSettingsInt("uiSmallTicket", False, 100)
         uiNormalTicket.SetSettingsInt("uiNormalTicket", False, 100)
+
 
         uiOd.SetSettingsDate()
         uiDo.SetSettingsDate()
@@ -32,6 +35,14 @@ Public NotInheritable Class NowaKarta
         If Await vb14.DialogBoxYNAsync("Zresetować licznik?") Then
             'vb14.AppendLogYearly("reset licznika, stan bieżący: " & vb14.GetSettingsInt("kwota") & vbCrLf)
             vb14.SetSettingsInt("kwota", 0)
+        End If
+
+        If (Date.Now - uiOd.Date.Value).TotalDays > 5 Then
+            Dim sIle As String = Await vb14.DialogBoxInputAllDirectAsync("Jaki przyjąć stan początkowy licznika kosztów?", "0")
+            Dim koszt As Integer
+            If Integer.TryParse(sIle, koszt) Then
+                vb14.SetSettingsInt("kwota", koszt)
+            End If
         End If
 
         Me.GoBack()

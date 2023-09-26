@@ -4,9 +4,15 @@ Imports pkar.Uwp.Ext
 Public NotInheritable Class MainPage
     Inherits Page
 
+    Private Const DLUGI_CZAS As Integer = 60
+    Private Const KROTKI_CZAS As Integer = 20
+
     Private Sub Page_Loaded(sender As Object, e As RoutedEventArgs)
         uiDataOd.Text = vb14.GetSettingsString("uiOd")
         uiDataDo.Text = vb14.GetSettingsString("uiDo") ' mDataDo.ToString("dd MM yyyy")
+
+        uiAdd20.Content = $"{KROTKI_CZAS} min"
+        uiAdd50.Content = $"{DLUGI_CZAS} min"
 
         uiRefresh_Click(Nothing, Nothing)
     End Sub
@@ -18,6 +24,8 @@ Public NotInheritable Class MainPage
         Dim iGroszy As Integer = vb14.GetSettingsInt("kwota")
         iGroszy += iBiletGroszy
         vb14.SetSettingsInt("kwota", iGroszy, True)
+
+        App._logZdarzen &= $"{Date.Now.ToString("yyyy.MM.dd HH:mm")}    +{iBiletGroszy} = {iGroszy}" & vbCrLf
 
         uiRefresh_Click(Nothing, Nothing)
     End Sub
@@ -53,4 +61,9 @@ Public NotInheritable Class MainPage
     Private Sub uiSetting_Click(sender As Object, e As RoutedEventArgs)
         Me.Navigate(GetType(NowaKarta))
     End Sub
+
+    Private Sub uiLog_Click(sender As Object, e As RoutedEventArgs)
+        Me.Navigate(GetType(ShowLog))
+    End Sub
+
 End Class

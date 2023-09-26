@@ -9,15 +9,15 @@
   IgnorableNamespaces="uap mp uap3 uap5">
 
   <Identity
-    Name="d81b2e0a-eb7a-46a8-9954-3a5c278e1ca8"
-    Publisher="CN=lokalne"
-    Version="1.0.0.0" />
+    Name="622PKar.TramTicket"
+    Publisher="CN=B2AF14E8-43FD-463C-83BA-4CEC47122EA2"
+    Version="1.0.1.0" />
 
-  <mp:PhoneIdentity PhoneProductId="d81b2e0a-eb7a-46a8-9954-3a5c278e1ca8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e6a715b2-14d8-4bab-9ea4-9ec29e77cff4" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>TramTicket</DisplayName>
-    <PublisherDisplayName>lokalne</PublisherDisplayName>
+    <PublisherDisplayName>PKar</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -39,7 +39,7 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="TramTicket"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
 		<Extensions>
@@ -58,8 +58,4 @@
 		</Extensions>
 	</Application>
   </Applications>
-
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>

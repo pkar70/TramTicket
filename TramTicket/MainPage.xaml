@@ -34,8 +34,8 @@
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Do dnia:" />
         <TextBlock Grid.Row="3" Grid.Column="1" Name="uiDataDo" />
 
-        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Content="20 min" Click="uiAdd20_Click" />
-        <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Content="50 min" Click="uiAdd50_Click" />
+        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Content="20 min" Click="uiAdd20_Click" Name="uiAdd20"/>
+        <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Content="50 min" Click="uiAdd50_Click" Name="uiAdd50"/>
 
         <Slider Grid.Row="7" Grid.ColumnSpan="2" Header="Czas" HorizontalAlignment="Stretch" Name="uiSliderCzas" Maximum="90"/>
         <TextBlock Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Right" Text="{Binding ElementName=uiSliderCzas, Path=Value}" />
@@ -50,7 +50,8 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Minimal" >
-            <AppBarButton Icon="Setting" Click="uiSetting_Click" />
+            <AppBarButton Icon="List" Click="uiLog_Click" Label="Log" />
+            <AppBarButton Icon="Setting" Click="uiSetting_Click" Label="Settings" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

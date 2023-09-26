@@ -26,7 +26,7 @@
         <TextBox Name="uiCenaKarty" Header="Cena karty" InputScope="Number" />
 
         <TextBox Name="uiSmallTicket" Header="Cena 'krótkiego' biletu" InputScope="Number" />
-        <TextBox Name="uiNormalTicket" Header="Cena 'krótkiego' biletu" InputScope="Number" />
+        <TextBox Name="uiNormalTicket" Header="Cena 'dłuiego' biletu" InputScope="Number" />
 
         <Button Content="OK" HorizontalAlignment="Center" Click="uiOk_Click" />
 

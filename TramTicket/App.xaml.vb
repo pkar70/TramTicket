@@ -115,4 +115,6 @@ NotInheritable Class App
     End Sub
 
 
+    Public Shared _logZdarzen As String = ""
+
 End Class
